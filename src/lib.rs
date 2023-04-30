@@ -32,6 +32,14 @@ impl Rectangular {
 
         Polar::new(arg, modulus)
     }
+
+    pub fn real(&self) -> f64 {
+        self.real
+    }
+
+    pub fn imag(&self) -> f64 {
+        self.imag
+    }
 }
 
 impl Complex for Rectangular {
@@ -124,9 +132,6 @@ impl Display for Rectangular {
     
 }
 
-
-
-
 #[derive(Debug)]
 pub struct Polar {
     arg: f64,
@@ -142,6 +147,14 @@ impl Polar {
         let real = self.modulus * self.arg.cos();
         let imag = self.modulus * self.arg.sin();
         Rectangular::new(real, imag)
+    }
+
+    pub fn arg(&self) -> f64 {
+        self.arg
+    }
+
+    pub fn modulus(&self) -> f64 {
+        self.modulus
     }
 }
 
